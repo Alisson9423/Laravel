@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cliente/{id}/{nome}',function($id,$nome){
+    return "Cliente $nome Nº $id";
+});
