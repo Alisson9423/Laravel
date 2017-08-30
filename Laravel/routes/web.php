@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cliente/{id}/{nome}',function($id,$nome){
-    return "Cliente $nome Nº $id";
+Route::get('/client',function(){ // Rota Client 
+    return view('client');       
+            
 });
+
+Route::post('/client',function(Request $request){// Recebendo os dados da  rota cliente
+    return $request->get('value');
+})->name('client.store');
