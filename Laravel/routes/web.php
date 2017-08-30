@@ -23,3 +23,9 @@ Route::get('/client',function(){ // Rota Client
 Route::post('/client',function(Request $request){// Recebendo os dados da  rota cliente
     return $request->get('value');
 })->name('client.store');
+
+Route::get('/client/{id}/{name?}',function($id, $name= 'Alisson' ){ 
+    return view('client-name')
+            ->with('id',$id)
+            ->with('name',$name);       
+});
