@@ -1,7 +1,7 @@
-<form class="form" method="post" action="<?= route('client.store')?>">
+<form class="form" method="post" action="{{route('client.store')}}">
     <div class="form-group"> 
         <label for="valor">Valor</label>
-        <input type="hidden" name="_token" value="<?= csrf_token();?>">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="text" name="value" class="form-control" placeholder="Valor"> 
     </div>
 

@@ -1,1 +1,0 @@
-<p>Cliente <?=$name;?> id: <?=$id;?></p>
