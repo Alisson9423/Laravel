@@ -15,14 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/client',function(){ // Rota Client 
-    return view('client');       
-            
+Route::group(['prefix'=>'admin', 'as'=>'admin.'],function(){
+    Route::get('client','clientsController@index');
+
+    Route::post('cliente','clientsController@store')->name('client.store'); 
 });
 
-Route::post('/client',function(Request $request){// Recebendo os dados da  rota cliente
-    return $request->get('value');
-})->name('client.store');
+
+Route::group(['prefix'=>'', 'as'=>'site.'],function(){
+    Route::get('client','SiteClientsController@index');
+
+    Route::post('cliente','SiteClientsController@store')->name('client.store'); 
+});
+
+
 
 Route::get('/client/{id}/{name?}',function($id, $name= 'Alisson' ){ 
     return view('client-name')
