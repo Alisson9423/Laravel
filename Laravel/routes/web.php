@@ -30,3 +30,7 @@ Route::get('/client/{id}/{name?}',function($id, $name= 'Alisson' ){
             ->with('name',$name)
             ->with("conteudo","teste");       
 });
+
+Route::get('if-for',function(){  
+    return view('if-for');       
+});
