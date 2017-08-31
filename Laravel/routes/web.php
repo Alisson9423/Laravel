@@ -27,5 +27,6 @@ Route::post('/client',function(Request $request){// Recebendo os dados da  rota 
 Route::get('/client/{id}/{name?}',function($id, $name= 'Alisson' ){ 
     return view('client-name')
             ->with('id',$id)
-            ->with('name',$name);       
+            ->with('name',$name)
+            ->with("conteudo","teste");       
 });
